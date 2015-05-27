@@ -131,7 +131,7 @@ class TheGreatValley
         end
 
         config.vm.provision "shell" do |s|
-            s.inline = "echo \"\n#Set TheGreatValley environment variable\nexport $1=$2\" >> /home/vagrant/.profile"
+            s.inline = "echo \"\n#Set The Great Valley environment variable\nexport $1=$2\" >> /home/vagrant/.profile"
             s.args = [var["key"], var["value"]]
         end
       end
