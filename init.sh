@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.homestead
+mkdir -p ~/.thegreatvalley
 
-homesteadRoot=~/.homestead
+thegreatvalleyRoot=~/.thegreatvalley
 
-cp -i src/stubs/Homestead.yaml "$homesteadRoot/Homestead.yaml"
-cp -i src/stubs/after.sh "$homesteadRoot/after.sh"
-cp -i src/stubs/aliases "$homesteadRoot/aliases"
+cp -i src/stubs/TheGreatValley.yaml "$thegreatvalleyRoot/TheGreatValley.yaml"
+cp -i src/stubs/after.sh "$thegreatvalleyRoot/after.sh"
+cp -i src/stubs/aliases "$thegreatvalleyRoot/aliases"
 
-echo "Homestead initialized!"
+echo "The Great Valley initialized!"

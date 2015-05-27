@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace SimplyReactive\TheGreatValley;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -15,7 +15,7 @@ class HaltCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('halt')
-                  ->setDescription('Halt the Homestead machine');
+                  ->setDescription('Halt the The Great Valley');
 	}
 
 	/**

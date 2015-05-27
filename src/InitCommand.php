@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace SimplyReactive\TheGreatValley;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -15,7 +15,7 @@ class InitCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('init')
-                  ->setDescription('Create a stub Homestead.yaml file');
+                  ->setDescription('Create a stub TheGreatValley.yaml file');
 	}
 
 	/**
@@ -27,19 +27,19 @@ class InitCommand extends Command {
 	 */
 	public function execute(InputInterface $input, OutputInterface $output)
 	{
-		if (is_dir(homestead_path()))
+		if (is_dir(thegreatvalley_path()))
 		{
-			throw new \InvalidArgumentException("Homestead has already been initialized.");
+			throw new \InvalidArgumentException("The Great Valley has already been initialized.");
 		}
 
-		mkdir(homestead_path());
+		mkdir(thegreatvalley_path());
 
-		copy(__DIR__.'/stubs/Homestead.yaml', homestead_path().'/Homestead.yaml');
-		copy(__DIR__.'/stubs/after.sh', homestead_path().'/after.sh');
-		copy(__DIR__.'/stubs/aliases', homestead_path().'/aliases');
+		copy(__DIR__.'/stubs/TheGreatValley.yaml', thegreatvalley_path().'/TheGreatValley.yaml');
+		copy(__DIR__.'/stubs/after.sh', thegreatvalley_path().'/after.sh');
+		copy(__DIR__.'/stubs/aliases', thegreatvalley_path().'/aliases');
 
-		$output->writeln('<comment>Creating Homestead.yaml file...</comment> <info>✔</info>');
-		$output->writeln('<comment>Homestead.yaml file created at:</comment> '.homestead_path().'/Homestead.yaml');
+		$output->writeln('<comment>Creating TheGreatValley.yaml file...</comment> <info>✔</info>');
+		$output->writeln('<comment>TheGreatValley.yaml file created at:</comment> '.thegreatvalley_path().'/TheGreatValley.yaml');
 	}
 
 }

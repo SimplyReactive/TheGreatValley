@@ -14,11 +14,11 @@ folders:
       to: /home/vagrant/Code
 
 sites:
-    - map: homestead.app
+    - map: thegreatvalley.app
       to: /home/vagrant/Code/Laravel/public
 
 databases:
-    - homestead
+    - thegreatvalley
 
 variables:
     - key: APP_ENV

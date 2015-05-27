@@ -2,20 +2,20 @@ require 'json'
 require 'yaml'
 
 VAGRANTFILE_API_VERSION = "2"
-confDir = $confDir ||= File.expand_path("~/.homestead")
+confDir = $confDir ||= File.expand_path("~/.thegreatvalley")
 
-homesteadYamlPath = confDir + "/Homestead.yaml"
+thegreatvalleyYamlPath = confDir + "/TheGreatValley.yaml"
 afterScriptPath = confDir + "/after.sh"
 aliasesPath = confDir + "/aliases"
 
-require File.expand_path(File.dirname(__FILE__) + '/scripts/homestead.rb')
+require File.expand_path(File.dirname(__FILE__) + '/scripts/thegreatvalley.rb')
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	if File.exists? aliasesPath then
 		config.vm.provision "file", source: aliasesPath, destination: "~/.bash_aliases"
 	end
 
-	Homestead.configure(config, YAML::load(File.read(homesteadYamlPath)))
+	TheGreatValley.configure(config, YAML::load(File.read(thegreatvalleyYamlPath)))
 
 	if File.exists? afterScriptPath then
 		config.vm.provision "shell", path: afterScriptPath

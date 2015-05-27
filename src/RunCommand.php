@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace SimplyReactive\TheGreatValley;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -17,8 +17,8 @@ class RunCommand extends Command {
 	{
 		$this
 			->setName('run')
-			->setDescription('Run commands through the Homestead machine via SSH')
-			->addArgument('ssh-command', InputArgument::REQUIRED, 'The command to pass through to the virtual machine.');
+			->setDescription('Run commands through the The Great Valley via SSH')
+			->addArgument('ssh-command', InputArgument::REQUIRED, 'The command to pass through.');
 }
 
 	/**

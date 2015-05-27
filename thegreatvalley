@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+
+$_ENV['HOME'] = getenv('HOME');
+$_ENV['VAGRANT_DOTFILE_PATH'] = thegreatvalley_path().DIRECTORY_SEPARATOR.'.vagrant';
+
+if (file_exists(__DIR__.'/vendor/autoload.php'))
+{
+	require __DIR__.'/vendor/autoload.php';
+}
+else
+{
+	require __DIR__.'/../../autoload.php';
+}
+
+function thegreatvalley_path()
+{
+	if (isset($_SERVER['HOME']))
+	{
+		return $_SERVER['HOME'].'/.thegreatvalley';
+	}
+	else
+	{
+		return $_SERVER['HOMEDRIVE'].$_SERVER['HOMEPATH'].DIRECTORY_SEPARATOR.'.thegreatvalley';
+	}
+}
+
+$app = new Symfony\Component\Console\Application('The Great Valley', '2.0.17');
+
+$app->add(new SimplyReactive\TheGreatValley\DestroyCommand);
+$app->add(new SimplyReactive\TheGreatValley\EditCommand);
+$app->add(new SimplyReactive\TheGreatValley\HaltCommand);
+$app->add(new SimplyReactive\TheGreatValley\InitCommand);
+$app->add(new SimplyReactive\TheGreatValley\ProvisionCommand);
+$app->add(new SimplyReactive\TheGreatValley\ResumeCommand);
+$app->add(new SimplyReactive\TheGreatValley\RunCommand);
+$app->add(new SimplyReactive\TheGreatValley\UpCommand);
+$app->add(new SimplyReactive\TheGreatValley\UpdateCommand);
+$app->add(new SimplyReactive\TheGreatValley\SshCommand);
+$app->add(new SimplyReactive\TheGreatValley\StatusCommand);
+$app->add(new SimplyReactive\TheGreatValley\SuspendCommand);
+
+$app->run();
