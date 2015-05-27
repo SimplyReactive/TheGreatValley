@@ -1,7 +1,7 @@
 ---
-ip: "192.168.10.10"
+ip: "10.10.10.10"
 memory: 2048
-cpus: 1
+cpus: 4
 provider: virtualbox
 
 authorize: ~/.ssh/id_rsa.pub
@@ -14,8 +14,9 @@ folders:
       to: /home/vagrant/Code
 
 sites:
-    - map: thegreatvalley.app
-      to: /home/vagrant/Code/Laravel/public
+    - map: thegreatvalley.local
+      to: /home/vagrant/Code/thegreatvalley/public
+      hhvm: true
 
 databases:
     - thegreatvalley

@@ -10,7 +10,7 @@ class TheGreatValley
     config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
     # Configure The Box
-    config.vm.box = "laravel/thegreatvalley"
+    config.vm.box = "SimplyReactive/TheGreatValley"
     config.vm.hostname = settings["hostname"] ||= "thegreatvalley"
 
     # Configure A Private Network IP
